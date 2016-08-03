@@ -1,0 +1,15 @@
+{
+    "name": "noahgallant/distributed-sign-in",
+    "description": "Hyper-secure sign-in platform for PHP web-apps",
+    "require": {
+        "google/apiclient": "^2.0",
+        "phpmailer/phpmailer": "~5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Noah Gallant",
+            "email": "gallantno@gmail.com"
+        }
+    ]
+}

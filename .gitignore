@@ -1,0 +1,4 @@
+/vendor/
+.env.php
+client_secrets.json
+.ftpcongig
