@@ -1,8 +1,6 @@
 <?php
 require 'login-engine.php';
-if(!verifySMS("1", "2035305217")){
-  echo "f";
-}
+
 echo 'Welcome to '.APP_NAME;
 ?>
 <br>
