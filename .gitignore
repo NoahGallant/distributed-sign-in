@@ -1,4 +1,4 @@
 /vendor/
-.env.php
-client_secrets.json
+login/.env.php
+login/client_secrets.json
 .ftpconfig
