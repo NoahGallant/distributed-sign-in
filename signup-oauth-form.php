@@ -8,10 +8,10 @@ if(count($returns) != 1){
 }
 $entry = (array)($returns[0]);
 if($entry["token"] != ""){
-  header('Location: /');
+  navigate('/');
 }
 
-$redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/login/oauth2callback.php';
+$redirect_uri = HOME.'/login/signup-oauth-callback.php';
 $client = new Google_Client();
 $client->setAuthConfig("oauth-credentials.json");
 $client->setRedirectUri($redirect_uri);

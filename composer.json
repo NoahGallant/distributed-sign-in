@@ -3,7 +3,8 @@
     "description": "Hyper-secure sign-in platform for PHP web-apps",
     "require": {
         "google/apiclient": "^2.0",
-        "phpmailer/phpmailer": "~5.2"
+        "phpmailer/phpmailer": "~5.2",
+        "giggsey/libphonenumber-for-php": "^7.4"
     },
     "license": "MIT",
     "authors": [

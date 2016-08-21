@@ -1,15 +1,24 @@
 <?php
-ini_set("display_errors", 1);
-ini_set("track_errors", 1);
-ini_set("html_errors", 1);
-error_reporting(E_ALL);
 require 'login-engine.php';
-if(signInPost($db)){
+verifyCSRF();
+
+if(!isset($_POST["sms"]) || !isset($_POST["pass"])){
+  navigate('signin-form.php?e');
+}
+
+$attempt = signInPost($db);
+
+if(is_array($attempt)){
   $_SESSION["sms"] = $_POST["sms"];
-  $iterations = 1000;
-  $salt = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
-  $_SESSION["pass"] = hash_pbkdf2("sha256", $_POST["pass"], $salt, $iterations, 20);
-  header('Location: /');
+  $redirect = "";
+  if (isset($_GET["redirect"]))
+  {
+    $r = $_GET["redirect"];
+    header("Location: $r");
+  }
+  else{
+    header("Location: " . HOME_SECURE);
+  }
 }
 else{
   header('Location: signin-form.php?e');
